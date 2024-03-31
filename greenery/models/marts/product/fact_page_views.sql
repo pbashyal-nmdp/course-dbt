@@ -9,9 +9,8 @@ select
 	SESSION_ID,
 	USER_ID,
 	PAGE_URL,
-	CREATED_AT,
-	EVENT_TYPE,
 	ORDER_ID,
-	PRODUCT_ID
-from {{ ref("stg_posgress__events")}}
+	PRODUCT_ID,
+	CREATED_AT
+from {{ ref("stg_postgres__events")}}
 where event_type = 'page_view'
