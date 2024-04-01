@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: int_active_product_promo
+    description: Intermediate table that captures promo with price

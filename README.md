@@ -3,6 +3,36 @@
 ## License
 GPL-3.0
 
+## Week 2
+
+### Part 1. Models 
+
+#### What is our user repeat rate?
+
+> Repeat Rate = Users who purchased 2 or more times / users who purchased
+
+```
+0.798387
+```
+
+
+#### Explain the product mart models you added. Why did you organize the models in the way you did?
+
+I added `fact_page_views` fact model and `int_active_product_promo` intermediate model that has the active product list and their corresponding promos.
+
+I created models directory to match product, marketing organization.
+
+#### What assumptions are you making about each model? (i.e. why are you adding each test?)
+
+I wanted to make sure all the ids are unique in product and users.
+
+#### Which products had their inventory change from week 1 to week 2? 
+
+Pothos
+Philodendron
+Monstera
+String of pearls
+
 
 ## Week 1
 
