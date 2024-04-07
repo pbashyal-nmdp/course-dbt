@@ -4,10 +4,7 @@
 
 -- Conversion rate by product is defined as
 -- the # of unique sessions with a purchase event of that product / total number of unique sessions that viewed that product
-with purchases as (select distinct SESSION_ID as purchase_session
-                   from {{ ref("stg_postgres__events") }}
-                   where EVENT_TYPE = 'checkout'
-                   group by SESSION_ID),
+with purchases as ({{ unique_purchase_sessions("stg_postgres__events")}}),
      numerator as (select events.PRODUCT_ID, count(distinct SESSION_ID) as purchases
                    from {{ ref("stg_postgres__events") }} events
                             join {{ ref("stg_postgres__products") }} products
