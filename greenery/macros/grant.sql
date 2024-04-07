@@ -7,4 +7,7 @@
 
     {% set table = run_query(sql) %}
 
+    {% set msg = "Granted " + role  + " to schema: " + schema %}
+    {{ dbt_utils.log_info(msg) }}
+
 {% endmacro %}
