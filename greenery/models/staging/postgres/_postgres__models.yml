@@ -45,4 +45,30 @@ models:
         tests:
           - not_null
           - unique
-    
+  - name:  stg_overall_conversion_rate
+    description: |
+      Conversion rate is defined as the # of unique sessions with a purchase event / total number of unique sessions.
+    columns:
+      - name: overall_conversion_rate
+        description: Calculated overall Conversion Rate
+        tests:
+          - not_null
+  - name:  stg_conversion_rate_by_product
+    description: |
+      Conversion rate by product is defined as
+      the # of unique sessions with a purchase event of that product / total number of unique sessions that viewed that product
+    columns:
+      - name: name
+        description: Name of the product
+        tests:
+          - not_null
+          - unique
+      - name: price
+        description: Price of the product
+        tests:
+          - not_null
+      - name: conversation_rate
+        description: Conversion Rate for the product
+        tests:
+          - not_null
+
