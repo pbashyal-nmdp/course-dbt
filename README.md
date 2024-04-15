@@ -26,13 +26,15 @@ where DBT_VALID_FROM >= date('2024-04-15')
 order by price desc ;
 ```
 
-Part 3:
 
-I'd setup Dagster and CI to have dbt build/update daily.
 
 #### Part 2: Modeling challenge
 
 Added page_view, add_to_card and checkout models.
+
+### Part 3:
+
+I'd setup Dagster and CI to have dbt build/update daily.
 
 ## Week 3
 
