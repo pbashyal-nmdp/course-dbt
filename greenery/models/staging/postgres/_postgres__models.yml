@@ -103,4 +103,19 @@ models:
           - unique
       - name: views
         description: Count of Products Added to Cart
-
+  - name: stg_checkout__sessions
+    description: |
+      Added to Cart Funnel
+    columns:
+      - name: product_id
+        description: product ID
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: Product Name
+        tests:
+          - not_null
+          - unique
+      - name: views
+        description: Count of Products Added to Cart
