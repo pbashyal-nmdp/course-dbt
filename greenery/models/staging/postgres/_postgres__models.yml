@@ -71,4 +71,24 @@ models:
         description: Conversion Rate for the product
         tests:
           - not_null
+  - name: stg_pageview__sessions
+    description: |
+      Page View Funnel
+    columns:
+      - name: product_id
+        description: product ID
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: Product Name
+        tests:
+          - not_null
+          - unique
+      - name: views
+        description: Count of Views for Product
+        tests:
+          - not_null
+          - unique
+
 
