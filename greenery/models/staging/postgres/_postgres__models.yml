@@ -27,6 +27,19 @@ models:
           - unique
   - name:  stg_postgres__order_items
     description: Order Items for an Order
+    columns:
+      - name: order_id
+        description: Unique Order ID
+        tests:
+          - not_null
+          - unique    
+      - name: product_id
+        description: Unique Product ID
+        tests:
+          - not_null
+          - unique
+      - name: quantity
+        description: Quantity of order  
   - name:  stg_postgres__promos
     description: Promo with code
   - name:  stg_postgres__addresses
@@ -71,4 +84,51 @@ models:
         description: Conversion Rate for the product
         tests:
           - not_null
-
+  - name: stg_pageview__sessions
+    description: |
+      Page View Funnel
+    columns:
+      - name: product_id
+        description: product ID
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: Product Name
+        tests:
+          - not_null
+          - unique
+      - name: views
+        description: Count of Page Views for Product
+  - name: stg_add_to_cart__sessions
+    description: |
+      Added to Cart Funnel
+    columns:
+      - name: product_id
+        description: product ID
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: Product Name
+        tests:
+          - not_null
+          - unique
+      - name: views
+        description: Count of Products Added to Cart
+  - name: stg_checkout__sessions
+    description: |
+      Added to Cart Funnel
+    columns:
+      - name: product_id
+        description: product ID
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: Product Name
+        tests:
+          - not_null
+          - unique
+      - name: views
+        description: Count of Products Added to Cart
