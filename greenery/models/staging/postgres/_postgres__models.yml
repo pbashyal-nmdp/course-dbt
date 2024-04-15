@@ -86,9 +86,21 @@ models:
           - not_null
           - unique
       - name: views
-        description: Count of Views for Product
+        description: Count of Page Views for Product
+  - name: stg_add_to_cart__sessions
+    description: |
+      Added to Cart Funnel
+    columns:
+      - name: product_id
+        description: product ID
         tests:
           - not_null
           - unique
-
+      - name: name
+        description: Product Name
+        tests:
+          - not_null
+          - unique
+      - name: views
+        description: Count of Products Added to Cart
 
